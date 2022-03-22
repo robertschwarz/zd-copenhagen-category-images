@@ -243,6 +243,8 @@ Go to `https://YOUR_ZENDESK_INSTANCE.zendesk.com/admin/workspaces/agent-workspac
 
 The title of this item has to be **Helpcenter Icon Mapping** and the placeholder value has to be **{{dc.helpcenter_icon_mapping}}**.
 
+![Example Image](https://robertschwarz.io/github/dc_hc_6.png)
+
 ## Step 2: Creating the mapping array
 For admins that are not too familiar with the JSON file format, this might be the trickiest part. The custom code uses this dynamic content as a map, so that it understands which category/section block should have which image.
 
