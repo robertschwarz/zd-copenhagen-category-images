@@ -30,6 +30,7 @@ This template allows for adding images or icons via a Dynamic Content item. The 
 
 # FAQ
 **What's the purpose of this?**
+
 I've seen a fair share of Zendesk templates (including paid ones) that have the 'logic' for category images hard-coded into the Template Manifest. They'll usually limit you to 4 - 12 categories. Moreover, `home_page.hbs` will be heavily customized. Ultimately, adding new categories will always result in extra effort for users and devs. (Adding a block name, url and image - or extending the code to support more category blocks).
 
 In my approach, I tried to leave as much freedom to the users as possible. This snippet does not limit you to a set amount of categories, and it keeps the template as vanilla as possible. In terms of DOM elements, we're only adding one more element to `home_page.hbs`. Since we're not changing the `blocks-item`s in their core, we only need to worry about adding more pictures.
@@ -37,20 +38,25 @@ In my approach, I tried to leave as much freedom to the users as possible. This 
 Moreover, you're free to change the design in any way you like with two simple CSS selectors.
 
 **How it works**
+
 In short, it's a piece of JavaScript that takes the Dynamic Content item and prepends a new `img` or `i` type element to any element of the `blocks-item` class. The prepended element's `src` or `classList` will be based on what's been mapped in the Dynamic Content item. Check "How to set up the Dynamic Content Item".
 
 **Can I customize these icons/images?**
+
 Yes, you can customize them with a CSS class selector.
 Images: `.blocks-item-image`
 Icons: `.blocks-item-icon`
 
 **What happens with categories/sections without a picture?**
+
 Nothing, the element will be rendered as per default and no `img` or `i` element will be prepended.
 
 **Can I choose if a section/category should have a picture?**
+
 Yes, if you want to map a section/category that doesn't have an image, simply set the `img` and `icon` keys in your mapping array to `null`. Check "Step 2: Creating the mapping array" for an example.
 
 **Why did you decide to abuse Dynamic Content for this?**
+
 Technically, this mapping could also live in a `.json` file in the theme assets - or it could live somewhere in `script.js`. But that would that you'd have to "Edit Code" to make changes to the mapping. If you are using CI/CD to maintain your Zendesk Help Center, changing the mapping would mean you have to re-link the repo, or you have to make a new commit for each change.
 
 I used the Dynamic Content object for this in hope that other Zendesk Admins or Frontend Devs will be able to empower their Zendesk Users (Team Leads, Power Users, etc) to maintain custom category images themselves.
@@ -85,6 +91,7 @@ Go to the new theme and select `Customize`, in the menu bar on the left, select 
 
 ### home_page.hbs
 **Adding an ID to blocks-item** 
+
 When looking at the code, this is the least noticable change. In lines 21 and 29 I added the `id-{{id}}` class to all `li` elements. This ID is used in the JavaScript snippet and mapped to the Dynamic Content array of objects.
 ```
         {{#each categories}}
@@ -111,9 +118,11 @@ When looking at the code, this is the least noticable change. In lines 21 and 29
 ```
 
 **Adding the custom script**
+
 At the bottom of `home_page.hbs` include the following script snippet:
 
 ⚠️ **Why is this code not in `script.js`?**
+
 You may ask yourself. It's because Zendesk's Curlybars only runs on `.hbs` files and we use Curlybars to get the Dynamic Content Item.
 ```
 <script>
@@ -170,6 +179,7 @@ You may ask yourself. It's because Zendesk's Curlybars only runs on `.hbs` files
 ```
 
 **Adding the basic CSS Snippet**
+
 To make the newly inserted items/icons not took to terrible, I added a `style` tag in `home_page.hbs`.
 Do feel free to do it the proper way and to include it in `style.css`, instead of `home_page.hbs`. 
 ```
