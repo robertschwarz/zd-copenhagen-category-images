@@ -1,6 +1,6 @@
 {
-  "name": "Copenhagen",
-  "author": "Zendesk",
+  "name": "Copenhagen w/ Custom Images and Icons",
+  "author": "Zendesk (minor changes by Robert Schwarz)",
   "version": "2.14.0",
   "api_version": 2,
   "default_locale": "en-us",
