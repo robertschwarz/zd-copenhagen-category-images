@@ -267,15 +267,42 @@ The mapping array in my example looks like this:
     "img": "https://via.placeholder.com/100x100",
     "icon": null
   },
-  ...
+  {
+    "id": "4768013970194",
+    "name": "Example Category 2",
+    "img": "https://via.placeholder.com/100x100",
+    "icon": null
+  },
+  {
+    "id": "4768052444690",
+    "name": "Example Category 3",
+    "img": null,
+    "icon": null
+  },
+  {
+    "id": "4768063316498",
+    "name": "Example Category 4",
+    "img": null,
+    "icon": "fa fa-cog"
+  },
+  {
+    "id": "4768065010450",
+    "name": "Example Category 5",
+    "img": "https://via.placeholder.com/100x100",
+    "icon": "fa fa-camera-retro"
+  }
 ]
 ```
 Each category that should have a picture has to be mapped in the array, with an image or an icon. The objects consist of four keys:
 
 `id`: This is the ID of the section or category
+
 `name`: This is an optional key, I added it so I don't have to constantly check which ID relates to which category.
+
 `img`: This key holds the URL to your image
+
 `icon`: This key holds the Icon CSS classes
+
 
 If you have trouble working with JSON files, and the file formatting, try [JSON Editor Online](https://jsoneditoronline.org/).
 
