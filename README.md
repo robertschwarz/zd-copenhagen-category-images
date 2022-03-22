@@ -11,6 +11,23 @@ This template allows for adding images or icons via a Dynamic Content item. The 
 
 ![Example Image](https://robertschwarz.io/github/dc_hc_1.png)
 
+- [FAQ](#faq)
+- [How to install this template](#how-to-install-this-template)
+  * [Method 1: Full Template Install](#method-1--full-template-install)
+    + [Step 1: Download the Theme](#step-1--download-the-theme)
+    + [Step 2: Installing the Theme in Zendesk](#step-2--installing-the-theme-in-zendesk)
+    + [Step 3: Turn on the new setting](#step-3--turn-on-the-new-setting)
+  * [Method 2: Only changing what's necessarry](#method-2--only-changing-what-s-necessarry)
+    + [home_page.hbs](#home-pagehbs)
+    + [(optional) manifest.json and translations](#-optional--manifestjson-and-translations)
+    + [(optional) document_head.hbs](#-optional--document-headhbs)
+- [How to set up the Dynamic Content Item](#how-to-set-up-the-dynamic-content-item)
+  * [Step 1: Creating the Item](#step-1--creating-the-item)
+  * [Step 2: Creating the mapping array](#step-2--creating-the-mapping-array)
+  * [Understanding the img and icon keys](#understanding-the-img-and-icon-keys)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # FAQ
 **What's the purpose of this?**
 I've seen a fair share of Zendesk templates (including paid ones) that have the 'logic' for category images hard-coded into the Template Manifest. They'll usually limit you to 4 - 12 categories. Moreover, `home_page.hbs` will be heavily customized. Ultimately, adding new categories will always result in extra effort for users and devs. (Adding a block name, url and image - or extending the code to support more category blocks).
