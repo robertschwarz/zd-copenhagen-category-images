@@ -11,6 +11,7 @@ This template allows for adding images or icons via a Dynamic Content item. The 
 
 ![Example Image](https://robertschwarz.io/github/dc_hc_1.png)
 
+# Table of Contents
 - [FAQ](#faq)
 - [How to install this template](#how-to-install-this-template)
   * [Method 1: Full Template Install](#method-1--full-template-install)
